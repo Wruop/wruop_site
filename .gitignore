@@ -1,0 +1,26 @@
+# Ferramentas de IA e de design (não fazem parte do site)
+.agent/
+.agents/
+.claude/
+.codex/
+.cursor/
+.devin/
+.gemini/
+.grok/
+.kiro/
+.opencode/
+.pi/
+.impeccable/
+
+# Originais em alta resolução: o site usa só as versões .webp
+assets/plates/*.png
+assets/brand/reference/
+assets/brand/wruop-logo.svg
+
+# Sistema
+Thumbs.db
+.DS_Store
+
+# Notas internas de produto e design (ficam só no seu computador)
+PRODUCT.md
+DESIGN.md

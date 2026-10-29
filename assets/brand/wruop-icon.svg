@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="1024" viewBox="0 0 1024 1024">
+<defs>
+ <linearGradient id="orbit" x1="150" y1="740" x2="840" y2="260" gradientUnits="userSpaceOnUse"><stop stop-color="#06C8F9"/><stop offset="0.44" stop-color="#2876FF"/><stop offset="0.78" stop-color="#7452FF"/><stop offset="1" stop-color="#A84DFF"/></linearGradient>
+ <linearGradient id="star" x1="460" y1="600" x2="700" y2="380" gradientUnits="userSpaceOnUse"><stop stop-color="#52E5FF"/><stop offset="0.45" stop-color="#F9FDFF"/><stop offset="0.75" stop-color="#CFB5FF"/><stop offset="1" stop-color="#9C53FF"/></linearGradient>
+ <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="21"/></filter>
+</defs>
+<g transform="rotate(-27 512 512)">
+ <ellipse cx="512" cy="512" rx="312" ry="152" fill="none" stroke="url(#orbit)" stroke-width="35" opacity=".46" filter="url(#softGlow)"/>
+ <ellipse cx="512" cy="512" rx="312" ry="152" fill="none" stroke="url(#orbit)" stroke-width="23"/>
+ <ellipse cx="512" cy="512" rx="312" ry="152" fill="none" stroke="#C3F6FF" stroke-width="3" opacity=".55" transform="translate(0 -8)"/>
+</g>
+<path d="M 584 343 C 601 426 622 453 710 478 C 625 494 598 522 584 618 C 571 523 546 496 457 478 C 544 453 570 424 584 343 Z" fill="url(#star)" opacity=".55" filter="url(#softGlow)"/>
+<path d="M 584 343 C 601 426 622 453 710 478 C 625 494 598 522 584 618 C 571 523 546 496 457 478 C 544 453 570 424 584 343 Z" fill="url(#star)"/>
+<path d="M 584 390 C 595 449 618 468 678 479 C 615 491 593 512 584 572 C 576 512 554 490 491 479 C 555 467 573 446 584 390 Z" fill="#FFFFFF" opacity=".62"/>
+</svg>
