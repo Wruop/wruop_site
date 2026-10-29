@@ -4,144 +4,164 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Wruop · Ideias em movimento</title>
-  <meta name="description" content="Wruop é um estúdio criativo: jogos, softwares, vídeos e design feitos pelo mesmo time.">
-  <meta name="theme-color" content="#080a25">
+  <meta name="description" content="Wruop é um estúdio criativo: jogos, softwares, vídeos e design feitos com propósito.">
+  <meta name="theme-color" content="#0b0d0f">
   <meta property="og:title" content="Wruop · Ideias em movimento">
-  <meta property="og:description" content="Jogos, softwares, vídeos e design feitos pelo mesmo time.">
+  <meta property="og:description" content="Jogos, softwares, vídeos e design feitos com propósito.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://w-3f.com/">
-  <meta property="og:image" content="https://w-3f.com/assets/plates/stage-1920.webp">
   <link rel="canonical" href="https://w-3f.com/">
-  <link rel="icon" href="assets/brand/wruop-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/brand/wruop-mark.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/sora-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/plates/star.webp" as="image" type="image/webp">
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/site.css">
   <script src="assets/js/site.js" defer></script>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M2.5 8h10.5M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-down" viewBox="0 0 16 16"><path d="M8 2.5V13M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
   <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
   <header class="nav" id="topo">
-    <a class="nav__logo" href="#topo" aria-label="Wruop, início">
-      <img src="assets/brand/wruop-logo-dark.svg" alt="Wruop" width="970" height="375">
-    </a>
-    <nav class="nav__links" aria-label="Principal">
-      <a href="#o-que-fazemos">O que fazemos</a>
-      <a href="#como-trabalhamos">Como trabalhamos</a>
-      <a href="#contato">Contato</a>
-    </nav>
-    <a class="nav__cta js-mail" href="#contato">Fale conosco</a>
+    <div class="nav__inner">
+      <a class="nav__logo" href="#topo" aria-label="Wruop, início">
+        <img src="assets/brand/wruop-logo-white.svg" alt="Wruop" width="915" height="295">
+      </a>
+      <nav class="nav__links" aria-label="Principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#como-trabalhamos">Como trabalhamos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="btn btn--ghost nav__cta js-mail" href="#contato">Vamos conversar <svg class="btn__icon"><use href="#i-arrow"/></svg></a>
+    </div>
   </header>
 
   <main id="conteudo">
-    <section class="show" id="o-que-fazemos" aria-label="O que fazemos">
-      <div class="show__stage">
-        <div class="frame">
-          <picture class="stage">
-            <source type="image/webp" media="(max-aspect-ratio: 5/4), (max-width: 760px)" srcset="assets/plates/stage-portrait-1080.webp">
-            <source type="image/webp" srcset="assets/plates/stage-1080.webp 1080w, assets/plates/stage-1920.webp 1920w, assets/plates/stage-3200.webp 3200w" sizes="100vw">
-            <img src="assets/plates/stage-1920.webp" alt="" width="1920" height="963" fetchpriority="high">
-          </picture>
-          <img class="star" src="assets/plates/star.webp" srcset="assets/plates/star.webp 1020w, assets/plates/star-1530.webp 1530w" sizes="(max-width: 760px) 80vw, 25vw" alt="" width="1020" height="630">
-          <div class="horizon" aria-hidden="true">
-            <span class="horizon__gel" data-gel="1"></span>
-            <span class="horizon__gel" data-gel="2"></span>
-            <span class="horizon__gel" data-gel="3"></span>
-          </div>
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="hero__grid" aria-hidden="true"><span class="hero__dot"></span></div>
+      <div class="wrap hero__inner">
+        <div class="hero__copy">
+          <span class="bar" aria-hidden="true"></span>
+          <h1 class="hero__title" id="hero-titulo"><span>Ideias</span> <span>em movimento</span></h1>
+          <p class="hero__line">Jogos, softwares, vídeos e design feitos com propósito.</p>
+          <a class="btn btn--ghost hero__cta" href="#servicos">Ver serviços <svg class="btn__icon"><use href="#i-arrow"/></svg></a>
+        </div>
 
-          <div class="intro">
-            <h1 class="intro__title">Ideias em movimento</h1>
-            <p class="intro__line">Jogos, softwares, vídeos e design feitos pelo mesmo time.</p>
-            <a class="gel js-mail" href="#contato">Fale com a gente por e-mail</a>
-          </div>
+        <ol class="index" aria-label="Áreas">
+          <li><a href="#jogos"><span class="index__n">01</span><span class="index__t">Jogos</span></a></li>
+          <li><a href="#softwares"><span class="index__n">02</span><span class="index__t">Softwares</span></a></li>
+          <li><a href="#videos"><span class="index__n">03</span><span class="index__t">Vídeos</span></a></li>
+          <li><a href="#design"><span class="index__n">04</span><span class="index__t">Design</span></a></li>
+        </ol>
 
-          <div class="panels">
-            <article class="panel" id="cue-0" role="tabpanel" aria-labelledby="tab-0">
-              <h2 class="panel__title">Jogos</h2>
-              <p class="panel__text">Jogos para celular, computador e navegador, do primeiro protótipo jogável ao lançamento.</p>
-              <ul class="panel__list"><li>Game design</li><li>Arte e animação</li><li>Programação</li><li>Publicação</li></ul>
-            </article>
-            <article class="panel" id="cue-1" role="tabpanel" aria-labelledby="tab-1" hidden>
-              <h2 class="panel__title">Softwares</h2>
-              <p class="panel__text">Aplicativos e sites sob medida, com a interface pensada para quem vai usar todo dia.</p>
-              <ul class="panel__list"><li>Sites</li><li>Aplicativos</li><li>Sistemas web</li><li>Interfaces</li></ul>
-            </article>
-            <article class="panel" id="cue-2" role="tabpanel" aria-labelledby="tab-2" hidden>
-              <h2 class="panel__title">Vídeos</h2>
-              <p class="panel__text">Filmes, comerciais e conteúdo para redes, do roteiro à finalização.</p>
-              <ul class="panel__list"><li>Roteiro</li><li>Captação</li><li>Edição</li><li>Motion</li></ul>
-            </article>
-            <article class="panel" id="cue-3" role="tabpanel" aria-labelledby="tab-3" hidden>
-              <h2 class="panel__title">Design</h2>
-              <p class="panel__text">Identidade visual, interfaces e peças que fazem a sua marca parecer ela mesma em qualquer lugar.</p>
-              <ul class="panel__list"><li>Identidade visual</li><li>UI e UX</li><li>Peças gráficas</li></ul>
-            </article>
-          </div>
+        <a class="hero__scroll" href="#servicos" aria-label="Rolar para os serviços">
+          <span>Scroll</span>
+          <svg><use href="#i-down"/></svg>
+        </a>
+        <p class="hero__sign">Da concepção à realidade</p>
+      </div>
+    </section>
 
-          <div class="cues">
-            <div class="cues__labels" role="tablist" aria-label="Áreas">
-              <button class="cue" id="tab-0" role="tab" aria-controls="cue-0" aria-selected="true" data-cue="0">Jogos</button>
-              <button class="cue" id="tab-1" role="tab" aria-controls="cue-1" aria-selected="false" tabindex="-1" data-cue="1">Softwares</button>
-              <button class="cue" id="tab-2" role="tab" aria-controls="cue-2" aria-selected="false" tabindex="-1" data-cue="2">Vídeos</button>
-              <button class="cue" id="tab-3" role="tab" aria-controls="cue-3" aria-selected="false" tabindex="-1" data-cue="3">Design</button>
-            </div>
-            <div class="track" aria-hidden="true">
-              <span class="track__lit"></span>
-              <span class="track__tick" style="--x: var(--c0)"></span>
-              <span class="track__tick" style="--x: var(--c1)"></span>
-              <span class="track__tick" style="--x: var(--c2)"></span>
-              <span class="track__tick" style="--x: var(--c3)"></span>
-              <span class="track__handle"></span>
-              <span class="track__head"></span>
-            </div>
-          </div>
+    <section class="services" id="servicos" aria-labelledby="servicos-titulo">
+      <div class="wrap">
+        <h2 class="visually-hidden" id="servicos-titulo">Serviços</h2>
+        <div class="cards">
+          <article class="card" id="jogos">
+            <header class="card__head">
+              <span class="card__n">01</span>
+              <h3 class="card__title">Jogos</h3>
+              <a class="card__go js-mail" href="#contato" aria-label="Falar sobre um projeto de jogo"><svg><use href="#i-arrow"/></svg></a>
+            </header>
+            <p class="card__text">Mundos interativos com identidade própria.</p>
+            <ul class="tags"><li>Game design</li><li>3D</li><li>Prototipação</li><li>Gameplay</li></ul>
+          </article>
+          <article class="card" id="softwares">
+            <header class="card__head">
+              <span class="card__n">02</span>
+              <h3 class="card__title">Softwares</h3>
+              <a class="card__go js-mail" href="#contato" aria-label="Falar sobre um projeto de software"><svg><use href="#i-arrow"/></svg></a>
+            </header>
+            <p class="card__text">Ferramentas que resolvem problemas reais.</p>
+            <ul class="tags"><li>Aplicações</li><li>Automação</li><li>Sistemas</li><li>Produtividade</li></ul>
+          </article>
+          <article class="card" id="videos">
+            <header class="card__head">
+              <span class="card__n">03</span>
+              <h3 class="card__title">Vídeos</h3>
+              <a class="card__go js-mail" href="#contato" aria-label="Falar sobre um projeto de vídeo"><svg><use href="#i-arrow"/></svg></a>
+            </header>
+            <p class="card__text">Conteúdo visual que chama atenção.</p>
+            <ul class="tags"><li>Edição</li><li>Motion</li><li>IA</li><li>Vídeo comercial</li></ul>
+          </article>
+          <article class="card" id="design">
+            <header class="card__head">
+              <span class="card__n">04</span>
+              <h3 class="card__title">Design</h3>
+              <a class="card__go js-mail" href="#contato" aria-label="Falar sobre um projeto de design"><svg><use href="#i-arrow"/></svg></a>
+            </header>
+            <p class="card__text">Identidade visual que gera valor.</p>
+            <ul class="tags"><li>Branding</li><li>UI/UX</li><li>Materiais</li><li>Direção de arte</li></ul>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="process" id="como-trabalhamos" aria-labelledby="como-titulo">
-      <div class="wrap">
-        <h2 class="section-title" id="como-titulo">Como trabalhamos</h2>
-        <p class="section-lead">Do primeiro e-mail ao lançamento, você fala com o mesmo time e sabe o que acontece em cada etapa.</p>
-        <ol class="cuesheet">
-          <li class="cuesheet__row">
-            <span class="cuesheet__cue">Cue 1</span>
-            <h3 class="cuesheet__title">Conversa</h3>
-            <p class="cuesheet__text">Você conta a ideia por e-mail. A gente faz as perguntas certas para entender o que precisa existir.</p>
+      <div class="wrap process__inner">
+        <div class="process__intro">
+          <span class="bar" aria-hidden="true"></span>
+          <h2 class="section-title" id="como-titulo">Como trabalhamos</h2>
+          <p class="section-lead">Do primeiro e-mail ao lançamento, você fala com o mesmo time e sabe o que acontece em cada etapa.</p>
+        </div>
+        <ol class="steps">
+          <li class="step">
+            <span class="step__n">01</span>
+            <h3 class="step__title">Conversa</h3>
+            <p class="step__text">Você conta a ideia por e-mail. A gente faz as perguntas certas para entender o que precisa existir.</p>
           </li>
-          <li class="cuesheet__row">
-            <span class="cuesheet__cue">Cue 2</span>
-            <h3 class="cuesheet__title">Proposta</h3>
-            <p class="cuesheet__text">Escopo, prazo e valor por escrito, antes de qualquer trabalho começar.</p>
+          <li class="step">
+            <span class="step__n">02</span>
+            <h3 class="step__title">Proposta</h3>
+            <p class="step__text">Escopo, prazo e valor por escrito, antes de qualquer trabalho começar.</p>
           </li>
-          <li class="cuesheet__row">
-            <span class="cuesheet__cue">Cue 3</span>
-            <h3 class="cuesheet__title">Produção</h3>
-            <p class="cuesheet__text">Entregas parciais para você ver o projeto tomando forma e ajustar o rumo no caminho.</p>
+          <li class="step">
+            <span class="step__n">03</span>
+            <h3 class="step__title">Produção</h3>
+            <p class="step__text">Entregas parciais para você ver o projeto tomando forma e ajustar o rumo no caminho.</p>
           </li>
-          <li class="cuesheet__row">
-            <span class="cuesheet__cue">Cue 4</span>
-            <h3 class="cuesheet__title">Lançamento</h3>
-            <p class="cuesheet__text">Publicamos o jogo, o app, o site ou o filme e ficamos por perto nos primeiros dias.</p>
+          <li class="step">
+            <span class="step__n">04</span>
+            <h3 class="step__title">Lançamento</h3>
+            <p class="step__text">Publicamos o jogo, o app, o site ou o vídeo e ficamos por perto nos primeiros dias.</p>
           </li>
         </ol>
       </div>
     </section>
 
     <section class="contact" id="contato" aria-labelledby="contato-titulo">
-      <div class="wrap contact__inner">
-        <h2 class="contact__title" id="contato-titulo">Tem uma ideia?</h2>
-        <p class="contact__text">Conte o que você quer fazer, mesmo que ainda esteja no começo. Os primeiros projetos da Wruop estão em produção agora; o seu pode ser um deles.</p>
-        <a class="gel gel--large js-mail" href="#contato">Escrever um e-mail</a>
-        <p class="contact__address js-mail-text">Endereço de e-mail em breve.</p>
+      <div class="wrap">
+        <div class="contact__panel">
+          <div class="contact__head">
+            <span class="bar" aria-hidden="true"></span>
+            <h2 class="contact__title" id="contato-titulo">Vamos construir algo grande juntos?</h2>
+          </div>
+          <p class="contact__text">Seja um jogo, um sistema, um vídeo ou uma identidade visual, a Wruop transforma ideias em resultados.</p>
+          <div class="contact__action">
+            <a class="btn btn--solid js-mail js-mail-main" href="#contato">Falar com a gente <svg class="btn__icon"><use href="#i-arrow"/></svg></a>
+            <p class="contact__address js-mail-text">Endereço de e-mail em breve.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="foot">
     <div class="wrap foot__inner">
-      <img class="foot__logo" src="assets/brand/wruop-logo-dark.svg" alt="Wruop" width="970" height="375" loading="lazy">
-      <p class="foot__note">Jogos, softwares, vídeos e design.</p>
+      <img class="foot__logo" src="assets/brand/wruop-logo-white.svg" alt="Wruop" width="915" height="295" loading="lazy">
+      <p class="foot__motto">Criar <span aria-hidden="true">·</span> Desenvolver <span aria-hidden="true">·</span> Transformar</p>
       <p class="foot__copy">© 2026 Wruop</p>
     </div>
   </footer>
