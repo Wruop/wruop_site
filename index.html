@@ -1,169 +1,66 @@
 <!doctype html>
-<html lang="pt-BR" data-email="">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Wruop · Ideias em movimento</title>
-  <meta name="description" content="Wruop é um estúdio criativo: jogos, softwares, vídeos e design feitos com propósito.">
+  <title>Wruop Gravity · Experiment 001</title>
+  <meta name="description" content="Wruop Gravity: a palavra WRUOP feita de partículas que reagem ao cursor e ao toque. O site da Wruop está em construção.">
   <meta name="theme-color" content="#0b0d0f">
-  <meta property="og:title" content="Wruop · Ideias em movimento">
-  <meta property="og:description" content="Jogos, softwares, vídeos e design feitos com propósito.">
+  <meta property="og:title" content="Wruop Gravity · Experiment 001">
+  <meta property="og:description" content="Ideias em movimento. O site está em construção, mas a ideia já está viva.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://w-3f.com/">
   <link rel="canonical" href="https://w-3f.com/">
   <link rel="icon" href="assets/brand/wruop-mark.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/sora-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/site.css?v=2">
-  <script src="assets/js/site.js?v=2" defer></script>
+  <link rel="stylesheet" href="assets/css/lab.css?v=3">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="assets/js/gravity.js?v=3" defer></script>
 </head>
 <body>
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M2.5 8h10.5M9 3.5 13.5 8 9 12.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-down" viewBox="0 0 16 16"><path d="M8 2.5V13M3.5 8.5 8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  </svg>
+  <canvas class="field" id="lab" aria-hidden="true"></canvas>
 
-  <a class="skip" href="#conteudo">Pular para o conteúdo</a>
-
-  <header class="nav" id="topo">
-    <div class="nav__inner">
-      <a class="nav__logo" href="#topo" aria-label="Wruop, início">
-        <img src="assets/brand/wruop-logo-white.svg" alt="Wruop" width="915" height="295">
-      </a>
-      <nav class="nav__links" aria-label="Principal">
-        <a href="#servicos">Serviços</a>
-        <a href="#como-trabalhamos">Como trabalhamos</a>
-        <a href="#contato">Contato</a>
-      </nav>
-      <a class="btn btn--ghost nav__cta js-mail" href="#contato">Vamos conversar <svg class="btn__icon"><use href="#i-arrow"/></svg></a>
-    </div>
+  <header class="top">
+    <p class="top__id"><span class="top__code">W-3F</span> <span class="top__slash" aria-hidden="true">/</span> Experiment 001</p>
+    <p class="status">
+      <span class="status__dot" aria-hidden="true"></span>
+      <span class="status__label">Site em construção</span>
+      <span class="status__sep" aria-hidden="true"></span>
+      <span class="status__build">Build 0.1</span>
+    </p>
   </header>
 
-  <main id="conteudo">
-    <section class="hero" aria-labelledby="hero-titulo">
-      <div class="hero__grid" aria-hidden="true"><span class="hero__dot"></span></div>
-      <div class="wrap hero__inner">
-        <div class="hero__copy">
-          <span class="bar" aria-hidden="true"></span>
-          <h1 class="hero__title" id="hero-titulo"><span>Ideias</span> <span>em movimento</span></h1>
-          <p class="hero__line">Jogos, softwares, vídeos e design feitos com propósito.</p>
-          <a class="btn btn--ghost hero__cta" href="#servicos">Ver serviços <svg class="btn__icon"><use href="#i-arrow"/></svg></a>
-        </div>
+  <main class="stage">
+    <h1 class="word">WRUOP</h1>
+    <p class="visually-hidden">Experimento interativo: a palavra Wruop é formada por partículas que fogem do cursor ou do dedo e voltam ao lugar. Os controles abaixo ligam a gravidade, espalham as partículas ou reconstroem a palavra.</p>
 
-        <ol class="index" aria-label="Áreas">
-          <li><a href="#jogos"><span class="index__n">01</span><span class="index__t">Jogos</span></a></li>
-          <li><a href="#softwares"><span class="index__n">02</span><span class="index__t">Softwares</span></a></li>
-          <li><a href="#videos"><span class="index__n">03</span><span class="index__t">Vídeos</span></a></li>
-          <li><a href="#design"><span class="index__n">04</span><span class="index__t">Design</span></a></li>
-        </ol>
+    <div class="copy">
+      <p class="copy__title">Ideias em movimento.</p>
+      <p class="copy__note">O site está em construção, mas a ideia já está viva.</p>
+      <p class="copy__hint">
+        <span class="hint-fine">Mova o cursor sobre as partículas · clique para gerar uma onda</span>
+        <span class="hint-coarse">Toque e arraste sobre as partículas</span>
+      </p>
+    </div>
 
-        <a class="hero__scroll" href="#servicos" aria-label="Rolar para os serviços">
-          <span>Scroll</span>
-          <svg><use href="#i-down"/></svg>
-        </a>
-        <p class="hero__sign">Da concepção à realidade</p>
-      </div>
-    </section>
-
-    <section class="services" id="servicos" aria-labelledby="servicos-titulo">
-      <div class="wrap">
-        <h2 class="visually-hidden" id="servicos-titulo">Serviços</h2>
-        <div class="cards">
-          <article class="card" id="jogos">
-            <header class="card__head">
-              <span class="card__n">01</span>
-              <h3 class="card__title">Jogos</h3>
-              <a class="card__go js-mail" href="#contato" aria-label="Falar sobre um projeto de jogo"><svg><use href="#i-arrow"/></svg></a>
-            </header>
-            <p class="card__text">Mundos interativos com identidade própria.</p>
-            <ul class="tags"><li>Game design</li><li>3D</li><li>Prototipação</li><li>Gameplay</li></ul>
-          </article>
-          <article class="card" id="softwares">
-            <header class="card__head">
-              <span class="card__n">02</span>
-              <h3 class="card__title">Softwares</h3>
-              <a class="card__go js-mail" href="#contato" aria-label="Falar sobre um projeto de software"><svg><use href="#i-arrow"/></svg></a>
-            </header>
-            <p class="card__text">Ferramentas que resolvem problemas reais.</p>
-            <ul class="tags"><li>Aplicações</li><li>Automação</li><li>Sistemas</li><li>Produtividade</li></ul>
-          </article>
-          <article class="card" id="videos">
-            <header class="card__head">
-              <span class="card__n">03</span>
-              <h3 class="card__title">Vídeos</h3>
-              <a class="card__go js-mail" href="#contato" aria-label="Falar sobre um projeto de vídeo"><svg><use href="#i-arrow"/></svg></a>
-            </header>
-            <p class="card__text">Conteúdo visual que chama atenção.</p>
-            <ul class="tags"><li>Edição</li><li>Motion</li><li>IA</li><li>Vídeo comercial</li></ul>
-          </article>
-          <article class="card" id="design">
-            <header class="card__head">
-              <span class="card__n">04</span>
-              <h3 class="card__title">Design</h3>
-              <a class="card__go js-mail" href="#contato" aria-label="Falar sobre um projeto de design"><svg><use href="#i-arrow"/></svg></a>
-            </header>
-            <p class="card__text">Identidade visual que gera valor.</p>
-            <ul class="tags"><li>Branding</li><li>UI/UX</li><li>Materiais</li><li>Direção de arte</li></ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="process" id="como-trabalhamos" aria-labelledby="como-titulo">
-      <div class="wrap process__inner">
-        <div class="process__intro">
-          <span class="bar" aria-hidden="true"></span>
-          <h2 class="section-title" id="como-titulo">Como trabalhamos</h2>
-          <p class="section-lead">Do primeiro e-mail ao lançamento, você fala com o mesmo time e sabe o que acontece em cada etapa.</p>
-        </div>
-        <ol class="steps">
-          <li class="step">
-            <span class="step__n">01</span>
-            <h3 class="step__title">Conversa</h3>
-            <p class="step__text">Você conta a ideia por e-mail. A gente faz as perguntas certas para entender o que precisa existir.</p>
-          </li>
-          <li class="step">
-            <span class="step__n">02</span>
-            <h3 class="step__title">Proposta</h3>
-            <p class="step__text">Escopo, prazo e valor por escrito, antes de qualquer trabalho começar.</p>
-          </li>
-          <li class="step">
-            <span class="step__n">03</span>
-            <h3 class="step__title">Produção</h3>
-            <p class="step__text">Entregas parciais para você ver o projeto tomando forma e ajustar o rumo no caminho.</p>
-          </li>
-          <li class="step">
-            <span class="step__n">04</span>
-            <h3 class="step__title">Lançamento</h3>
-            <p class="step__text">Publicamos o jogo, o app, o site ou o vídeo e ficamos por perto nos primeiros dias.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="contact" id="contato" aria-labelledby="contato-titulo">
-      <div class="wrap">
-        <div class="contact__panel">
-          <div class="contact__head">
-            <span class="bar" aria-hidden="true"></span>
-            <h2 class="contact__title" id="contato-titulo">Vamos construir algo grande juntos?</h2>
-          </div>
-          <p class="contact__text">Seja um jogo, um sistema, um vídeo ou uma identidade visual, a Wruop transforma ideias em resultados.</p>
-          <div class="contact__action">
-            <a class="btn btn--solid js-mail js-mail-main" href="#contato">Falar com a gente <svg class="btn__icon"><use href="#i-arrow"/></svg></a>
-            <p class="contact__address js-mail-text">Endereço de e-mail em breve.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="controls" role="group" aria-label="Modos do experimento">
+      <button class="control" type="button" data-mode="gravity" aria-pressed="false" aria-keyshortcuts="G">
+        <span class="control__dot" aria-hidden="true"></span>Gravity<kbd class="control__key" aria-hidden="true">G</kbd>
+      </button>
+      <button class="control" type="button" data-mode="chaos" aria-pressed="false" aria-keyshortcuts="C">
+        <span class="control__dot" aria-hidden="true"></span>Chaos<kbd class="control__key" aria-hidden="true">C</kbd>
+      </button>
+      <button class="control" type="button" data-mode="reconstruct" aria-pressed="true" aria-keyshortcuts="R">
+        <span class="control__dot" aria-hidden="true"></span>Reconstruct<kbd class="control__key" aria-hidden="true">R</kbd>
+      </button>
+    </div>
+    <p class="visually-hidden" id="announce" aria-live="polite"></p>
   </main>
 
   <footer class="foot">
-    <div class="wrap foot__inner">
-      <img class="foot__logo" src="assets/brand/wruop-logo-white.svg" alt="Wruop" width="915" height="295" loading="lazy">
-      <p class="foot__motto">Criar <span aria-hidden="true">·</span> Desenvolver <span aria-hidden="true">·</span> Transformar</p>
-      <p class="foot__copy">© 2026 Wruop</p>
-    </div>
+    <p>Wruop Labs © 2026</p>
+    <p class="foot__domain">w-3f.com</p>
   </footer>
 </body>
 </html>
