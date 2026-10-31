@@ -279,7 +279,7 @@ p, h1 { margin: 0; }
   border: 1px solid rgb(255 255 255 / 0.14);
   border-radius: 3px;
   font-family: var(--text);
-  font-size: 0.5625rem;
+  font-size: 0.6875rem;
   letter-spacing: 0;
   color: var(--quiet);
 }
@@ -313,7 +313,7 @@ p, h1 { margin: 0; }
   .status { padding: 0.5rem 0.8rem 0.5rem 0.7rem; gap: 0.6rem; }
   .copy__note { font-size: 0.875rem; max-width: 30ch; }
   .controls { bottom: calc(var(--edge) + 2.25rem); width: calc(100% - 2 * var(--edge)); justify-content: space-between; }
-  .control { padding: 0 0.55rem; gap: 0.5rem; letter-spacing: 0.16em; font-size: 0.625rem; }
+  .control { padding: 0 0.55rem; gap: 0.5rem; letter-spacing: 0.12em; font-size: 0.6875rem; }
   .control::after { left: 0.55rem; right: 0.55rem; }
   .foot__domain { display: none; }
   .foot { justify-content: center; }
