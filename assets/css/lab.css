@@ -1,0 +1,344 @@
+/* Wruop Gravity · Experiment 001. Full-screen lab: the canvas is the stage, the interface stays at the edges. */
+
+@font-face {
+  font-family: "Sora";
+  src: url("../fonts/sora-latin-wght-normal.woff2") format("woff2-variations");
+  font-weight: 100 800;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Sora";
+  src: url("../fonts/sora-latin-ext-wght-normal.woff2") format("woff2-variations");
+  font-weight: 100 800;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-latin-wght-normal.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-latin-ext-wght-normal.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  --black: #0b0d0f;
+  --deep: #07080a;
+  --graphite: #1f2328;
+  --ink: #ffffff;
+  --silver: #d9dbdf;
+  --muted: #9aa0a8;
+  --quiet: #8a9099;
+  --orange: #ff5a1f;
+  --edge: clamp(1.25rem, 3.2vw, 2.5rem);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --display: "Sora", system-ui, sans-serif;
+  --text: "Inter", system-ui, sans-serif;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  overflow: hidden;
+  min-height: 100svh;
+  background:
+    radial-gradient(120% 85% at 50% 38%, #16191d 0%, var(--black) 52%, var(--deep) 100%);
+  color: var(--silver);
+  font-family: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection { background: var(--orange); color: var(--black); }
+
+p, h1 { margin: 0; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+.control:focus-visible { outline-offset: 2px; outline-color: rgb(255 255 255 / 0.45); }
+
+:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 6px;
+  border-radius: 2px;
+}
+
+/* System labels share one voice: small, uppercase, widely tracked. */
+.top, .copy__hint, .control, .foot {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* ---------- Field ---------- */
+
+.field {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+/* The word in type, for no-JS and failed canvas only. */
+.word {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 43%;
+  translate: 0 -50%;
+  text-align: center;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(4rem, 17vw, 16rem);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--ink);
+  pointer-events: none;
+}
+.js .word { opacity: 0; }
+
+/* ---------- Header ---------- */
+
+.top {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: var(--edge) var(--edge) 0;
+  color: var(--muted);
+  pointer-events: none;
+}
+.top__code { color: var(--ink); }
+.top__slash { color: #4c525a; padding-inline: 0.35em; }
+
+/* Construction status: a system label, not a banner. */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.95rem 0.6rem 0.85rem;
+  border: 1px solid rgb(255 255 255 / 0.12);
+  border-radius: 999px;
+  background: rgb(17 19 22 / 0.62);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: var(--silver);
+  white-space: nowrap;
+}
+.status__dot {
+  position: relative;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+.status__dot::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--orange);
+  opacity: 0;
+}
+.status__sep { width: 1px; height: 0.8rem; background: rgb(255 255 255 / 0.16); }
+.status__build { color: var(--muted); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .status__dot::after { animation: ping 2.4s var(--ease-out) infinite; }
+}
+@keyframes ping {
+  0% { transform: scale(0.6); opacity: 0.7; }
+  70%, 100% { transform: scale(1.9); opacity: 0; }
+}
+
+/* ---------- Copy, lower left ---------- */
+
+.copy {
+  position: fixed;
+  left: var(--edge);
+  bottom: calc(var(--edge) + 2rem);
+  z-index: 2;
+  display: grid;
+  gap: 0.3rem;
+  max-width: 19rem;
+  pointer-events: none;
+}
+.copy__title {
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.copy__note {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+.copy__hint {
+  margin-top: 0.45rem;
+  color: var(--quiet);
+}
+.hint-coarse { display: none; }
+@media (pointer: coarse) {
+  .hint-fine { display: none; }
+  .hint-coarse { display: inline; }
+}
+
+.js .copy { opacity: 0; transition: opacity 1.4s var(--ease-out) 0.6s; }
+.js.is-ready .copy { opacity: 1; }
+
+/* ---------- Controls ---------- */
+
+.controls {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--edge) + 2.75rem);
+  z-index: 2;
+  translate: -50% 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: opacity 0.45s var(--ease-out), visibility 0s linear 0s;
+}
+/* Hidden without moving anything; inert in the markup keeps focus and clicks out. */
+.controls.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.45s var(--ease-out), visibility 0s linear 0.45s;
+}
+.control:disabled { opacity: 0.35; cursor: default; }
+.control {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 2.75rem;
+  padding: 0 1.1rem;
+  border: 0;
+  background: none;
+  font-family: var(--text);
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.3s var(--ease-out);
+}
+.control + .control::before {
+  content: "";
+  position: absolute;
+  left: -0.125rem;
+  top: 50%;
+  width: 1px;
+  height: 0.9rem;
+  translate: 0 -50%;
+  background: rgb(255 255 255 / 0.14);
+}
+.control::after {
+  content: "";
+  position: absolute;
+  left: 1.1rem;
+  right: 1.1rem;
+  bottom: 0.35rem;
+  height: 1px;
+  background: var(--ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease-out);
+}
+.control__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  transition: background 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+}
+.control__key {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.15rem;
+  height: 1.15rem;
+  padding: 0 0.2rem;
+  border: 1px solid rgb(255 255 255 / 0.14);
+  border-radius: 3px;
+  font-family: var(--text);
+  font-size: 0.6875rem;
+  letter-spacing: 0;
+  color: var(--quiet);
+}
+.control:hover { color: var(--ink); }
+.control[aria-pressed="true"] { color: var(--ink); }
+.control[aria-pressed="true"] .control__dot { background: var(--ink); border-color: var(--ink); }
+.control[aria-pressed="true"]::after { transform: scaleX(1); }
+.control:active { color: var(--silver); }
+
+@media (pointer: coarse) {
+  .control__key { display: none; }
+}
+
+/* ---------- Footer ---------- */
+
+.foot {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 var(--edge) var(--edge);
+  color: var(--quiet);
+  pointer-events: none;
+}
+
+/* ---------- Narrower screens: the copy sits above the controls ---------- */
+
+@media (max-width: 1180px) {
+  .copy { bottom: calc(var(--edge) + 6.25rem); }
+}
+
+@media (max-width: 640px) {
+  .top { flex-wrap: wrap; row-gap: 0.85rem; }
+  .status { padding: 0.5rem 0.8rem 0.5rem 0.7rem; gap: 0.6rem; }
+  .controls {
+    bottom: calc(var(--edge) + 1.75rem);
+    width: calc(100% - 2 * var(--edge));
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+  }
+  .control { justify-content: center; padding: 0 0.5rem; gap: 0.5rem; letter-spacing: 0.14em; font-size: 0.6875rem; }
+  .control::after { left: 25%; right: 25%; }
+  .control + .control::before { display: none; }
+  .copy { bottom: calc(var(--edge) + 8.25rem); max-width: none; right: var(--edge); }
+  .copy__note { max-width: 34ch; }
+  .foot__domain { display: none; }
+  .foot { justify-content: center; }
+}
+
+@media (max-width: 380px) {
+  .status__sep, .status__build { display: none; }
+}
+
+@media (max-height: 560px) and (orientation: landscape) {
+  .copy__note, .copy__hint { display: none; }
+}
