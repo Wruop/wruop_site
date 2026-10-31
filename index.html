@@ -14,9 +14,9 @@
   <link rel="icon" href="assets/brand/wruop-mark.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/sora-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/lab.css?v=4">
+  <link rel="stylesheet" href="assets/css/lab.css?v=5">
   <script>document.documentElement.classList.add("js");</script>
-  <script src="assets/js/gravity.js?v=4" defer></script>
+  <script src="assets/js/gravity.js?v=5" defer></script>
 </head>
 <body>
   <canvas class="field" id="lab" aria-hidden="true"></canvas>
@@ -33,16 +33,7 @@
 
   <main class="stage">
     <h1 class="word">WRUOP</h1>
-    <p class="visually-hidden">Experimento interativo: a palavra Wruop é formada por partículas que fogem do cursor ou do dedo e voltam ao lugar. Os controles abaixo ligam a gravidade, espalham as partículas ou reconstroem a palavra.</p>
-
-    <div class="copy">
-      <p class="copy__title">Ideias em movimento.</p>
-      <p class="copy__note">O site está em construção, mas a ideia já está viva.</p>
-      <p class="copy__hint">
-        <span class="hint-fine">Mova o cursor sobre as partículas · clique para gerar uma onda</span>
-        <span class="hint-coarse">Toque e arraste sobre as partículas</span>
-      </p>
-    </div>
+    <p class="visually-hidden">Experimento interativo: um pato feito de partículas caminha pelo centro da tela. As partículas fogem do cursor ou do dedo e voltam ao lugar. Os controles abaixo ligam a gravidade, espalham as partículas, reconstroem a forma ou trocam o pato pela logo da Wruop.</p>
 
     <div class="controls" role="group" aria-label="Modos do experimento">
       <button class="control" type="button" data-mode="gravity" aria-pressed="false" aria-keyshortcuts="G">
@@ -54,9 +45,21 @@
       <button class="control" type="button" data-mode="reconstruct" aria-pressed="true" aria-keyshortcuts="R">
         <span class="control__dot" aria-hidden="true"></span>Reconstruct<kbd class="control__key" aria-hidden="true">R</kbd>
       </button>
+      <button class="control control--form" type="button" data-form="logo" aria-pressed="false" aria-keyshortcuts="W">
+        <span class="control__dot" aria-hidden="true"></span>Wruop W<kbd class="control__key" aria-hidden="true">W</kbd>
+      </button>
     </div>
     <p class="visually-hidden" id="announce" aria-live="polite"></p>
   </main>
+
+  <aside class="copy" aria-label="Sobre este experimento">
+    <p class="copy__title">Ideias em movimento.</p>
+    <p class="copy__note">O site está em construção, mas a ideia já está viva.</p>
+    <p class="copy__hint">
+      <span class="hint-fine">Mova o cursor · clique para gerar uma onda</span>
+      <span class="hint-coarse">Toque e arraste sobre as partículas</span>
+    </p>
+  </aside>
 
   <footer class="foot">
     <p>Wruop Labs © 2026</p>
