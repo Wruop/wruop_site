@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Wruop Gravity · Experiment 001</title>
+  <meta name="description" content="Wruop Gravity: um pato de partículas anda de skate, vira a logo da Wruop e reage ao cursor e ao toque. Um experimento do estúdio Wruop.">
+  <meta name="theme-color" content="#0b0d0f">
+  <meta property="og:title" content="Wruop Gravity · Experiment 001">
+  <meta property="og:description" content="Ideias em Movimento. Um experimento de partículas do estúdio Wruop.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://w-3f.com/lab/gravity/">
+  <link rel="canonical" href="https://w-3f.com/lab/gravity/">
+  <link rel="icon" href="../../assets/brand/wruop-mark.svg" type="image/svg+xml">
+  <link rel="preload" href="../../assets/fonts/sora-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../../assets/css/lab.css?v=8">
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="../../assets/js/gravity.js?v=8" defer></script>
+</head>
+<body>
+  <canvas class="field" id="lab" aria-hidden="true" data-logo="../../assets/brand/wruop-logo-white.svg"></canvas>
+
+  <header class="top">
+    <p class="top__id"><span class="top__code">W-3F</span> <span class="top__slash" aria-hidden="true">/</span> Experiment 001</p>
+    <a class="status status--link" href="../../">
+      <span class="status__dot" aria-hidden="true"></span>
+      <span class="status__label">Site da Wruop</span>
+      <span class="status__sep" aria-hidden="true"></span>
+      <span class="status__build">Lab</span>
+    </a>
+  </header>
+
+  <main class="stage">
+    <h1 class="word">WRUOP</h1>
+    <p class="visually-hidden">Experimento interativo: um pato feito de partículas anda de skate de um lado para o outro da tela e se desfaz ao bater nas bordas. As partículas fogem do cursor ou do dedo e voltam ao lugar. Os controles abaixo ligam a gravidade, espalham as partículas, reconstroem a forma ou trocam o pato pela logo da Wruop.</p>
+
+    <div class="controls" role="group" aria-label="Modos do experimento">
+      <button class="control" type="button" data-mode="gravity" aria-pressed="false" aria-keyshortcuts="G">
+        <span class="control__dot" aria-hidden="true"></span>Gravity<kbd class="control__key" aria-hidden="true">G</kbd>
+      </button>
+      <button class="control" type="button" data-mode="chaos" aria-pressed="false" aria-keyshortcuts="C">
+        <span class="control__dot" aria-hidden="true"></span>Chaos<kbd class="control__key" aria-hidden="true">C</kbd>
+      </button>
+      <button class="control" type="button" data-mode="reconstruct" aria-pressed="true" aria-keyshortcuts="R">
+        <span class="control__dot" aria-hidden="true"></span>Reconstruct<kbd class="control__key" aria-hidden="true">R</kbd>
+      </button>
+      <button class="control control--form" type="button" data-form="logo" aria-pressed="false" aria-keyshortcuts="W">
+        <span class="control__dot" aria-hidden="true"></span>Wruop W<kbd class="control__key" aria-hidden="true">W</kbd>
+      </button>
+    </div>
+    <p class="visually-hidden" id="announce" aria-live="polite"></p>
+  </main>
+
+  <aside class="copy" aria-label="Sobre este experimento">
+    <p class="copy__title">Ideias em movimento.</p>
+    <p class="copy__note">Um experimento do estúdio Wruop: partículas com física, gravidade e colisão, em Canvas 2D.</p>
+    <p class="copy__hint">
+      <span class="hint-fine">Mova o cursor · clique para gerar uma onda</span>
+      <span class="hint-coarse">Toque e arraste sobre as partículas</span>
+    </p>
+  </aside>
+
+  <footer class="foot">
+    <p>Wruop Lab © 2026</p>
+    <p class="foot__domain"><a href="../../">w-3f.com</a></p>
+  </footer>
+</body>
+</html>
