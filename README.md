@@ -8,7 +8,7 @@ Next.js (App Router) + TypeScript + CSS Modules, exportado como site estático. 
 
 | Sprint | Conteúdo | Situação |
 |---|---|---|
-| 01 Foundation | Identidade, header, idiomas, hero comercial, 7 seções, navegação, contato, layout responsivo | Código pronto; build e testes no PC pendentes |
+| 01 Foundation | Identidade, header, idiomas, hero comercial, 7 seções, navegação, contato, layout responsivo | Pronto: build no PC ok; 37 testes passando em desktop, tablet e celular (19/11/2026) |
 | 02 Interface Repair Lab | Comparador antes/depois | Próxima |
 | 03 Particle Cat | Gato 3D de partículas com Chaos, Gravity e Reset | Planejada |
 | 04 Commercial Projects | Fieldline Parts, Parts Finder | Planejada |
