@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Spectral } from "next/font/google";
+import { Hanken_Grotesk, IBM_Plex_Mono, Spectral } from "next/font/google";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 import { LocaleProvider } from "@/components/LocaleProvider";
@@ -8,10 +8,10 @@ import { htmlLang, isLocale, locales, type Locale } from "@/i18n/config";
 import { siteUrl } from "@/content/site";
 import "../globals.css";
 
-// Editorial display face for headlines; Geist for interface and body; Geist Mono for technical labels.
+// Editorial display face for headlines; Hanken Grotesk for interface and body; IBM Plex Mono for technical labels.
 const display = Spectral({ subsets: ["latin", "latin-ext"], weight: ["300", "400"], variable: "--font-display", display: "swap" });
-const sans = Geist({ subsets: ["latin", "latin-ext"], variable: "--font-sans", display: "swap" });
-const mono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
+const sans = Hanken_Grotesk({ subsets: ["latin", "latin-ext"], variable: "--font-sans", display: "swap" });
+const mono = IBM_Plex_Mono({ subsets: ["latin", "latin-ext"], weight: ["400", "500"], variable: "--font-mono", display: "swap" });
 
 export const dynamicParams = false;
 

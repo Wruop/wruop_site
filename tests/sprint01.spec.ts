@@ -158,7 +158,7 @@ test.describe("accessibility and layout", () => {
     }
   });
 
-  test("reduced motion turns off entrance and pulse animations", async ({ page }) => {
+  test("reduced motion turns off the entrance animation", async ({ page }) => {
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("/en/");
     const anim = await page.locator("figure img").evaluate((el) => getComputedStyle(el).animationName);

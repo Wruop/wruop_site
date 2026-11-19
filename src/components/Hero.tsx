@@ -45,7 +45,7 @@ export function Hero() {
           <figcaption className={styles.caption}>
             <span className={styles.captionName}>{t.hero.stageLabel}</span>
             <span className={styles.captionStatus}>
-              <span className={styles.pulse} aria-hidden="true" />
+              <span className={styles.dot} aria-hidden="true" />
               {t.hero.stageStatus}
             </span>
           </figcaption>
