@@ -1,0 +1,85 @@
+.icf {
+  background:
+    radial-gradient(50% 80% at 85% 20%, rgb(240 100 54 / 0.06), transparent 70%),
+    var(--ground-sunk);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  gap: var(--space-5);
+  align-items: end;
+}
+
+.copy {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.title {
+  font-size: var(--step-4);
+  max-width: 12ch;
+}
+
+.body {
+  max-width: 48ch;
+  font-size: var(--step-1);
+  line-height: 1.5;
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+
+.tech {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tech li {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-family: var(--font-mono-stack);
+  font-size: var(--step--1);
+}
+
+.next {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+}
+
+.nextLabel {
+  font-family: var(--font-mono-stack);
+  font-size: var(--step--1);
+  font-weight: 400;
+  color: var(--ink-2);
+}
+
+.nextList {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.nextList li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.nextList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.8em;
+  width: 0.6rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+@media (max-width: 55.99rem) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+}

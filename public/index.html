@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weider · W.</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://w-3f.com/en/">
+  <link rel="alternate" hreflang="en" href="https://w-3f.com/en/">
+  <link rel="alternate" hreflang="pt-BR" href="https://w-3f.com/pt-br/">
+  <link rel="alternate" hreflang="x-default" href="https://w-3f.com/en/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <meta name="theme-color" content="#111315">
+  <script>
+    // English for new visitors; the saved choice wins on return visits.
+    (function () {
+      var target = "en";
+      try { if (localStorage.getItem("weider.locale") === "pt-br") target = "pt-br"; } catch (e) {}
+      location.replace("/" + target + "/" + location.hash);
+    })();
+  </script>
+  <noscript><meta http-equiv="refresh" content="0; url=/en/"></noscript>
+  <style>html{background:#111315;color:#f3f0e8;font:16px/1.5 system-ui,sans-serif}a{color:#ff7a4d}body{padding:2rem}</style>
+</head>
+<body>
+  <p><a href="/en/">English</a> · <a href="/pt-br/" hreflang="pt-BR" lang="pt-BR">Português</a></p>
+</body>
+</html>

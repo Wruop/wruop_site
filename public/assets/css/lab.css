@@ -342,3 +342,17 @@ p, h1 { margin: 0; }
 @media (max-height: 560px) and (orientation: landscape) {
   .copy__note, .copy__hint { display: none; }
 }
+
+/* ---------- Lab inside the site: the badge links back home ---------- */
+
+.status--link {
+  pointer-events: auto;
+  text-decoration: none;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .status--link:hover { border-color: rgb(255 255 255 / 0.32); color: var(--ink); }
+}
+.status--link:active { transform: scale(0.97); }
+.foot__domain a { pointer-events: auto; color: inherit; text-decoration: none; }
+.foot__domain a:hover { color: var(--ink); }

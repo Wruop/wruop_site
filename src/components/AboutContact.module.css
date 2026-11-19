@@ -1,0 +1,121 @@
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: var(--space-3) var(--space-5);
+}
+
+.head {
+  display: grid;
+  gap: var(--space-2);
+  align-content: start;
+  grid-row: span 2;
+}
+
+.title {
+  font-size: var(--step-3);
+  max-width: 14ch;
+}
+
+.text {
+  display: grid;
+  gap: var(--space-2);
+  max-width: var(--measure);
+  color: var(--ink-2);
+  font-size: var(--step-1);
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.strengths {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.label {
+  font-family: var(--font-mono-stack);
+  font-size: var(--step--1);
+  font-weight: 400;
+  color: var(--ink-2);
+}
+
+.strengths ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.strengths li {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: var(--step--1);
+}
+
+.contactSection {
+  padding-block: var(--space-7) calc(var(--space-7) * 0.8);
+}
+
+.contact {
+  display: grid;
+  gap: var(--space-3);
+  justify-items: start;
+}
+
+.contactTitle {
+  font-size: var(--step-4);
+  max-width: 14ch;
+}
+
+.contactBody {
+  max-width: 46ch;
+  font-size: var(--step-1);
+  color: var(--ink-2);
+}
+
+.channels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.channel {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;
+  padding-inline: 1.25rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: border-color 160ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .channel:hover {
+    border-color: var(--accent);
+  }
+}
+
+.pending {
+  margin-top: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border-left: 2px solid var(--accent);
+  background: var(--ground-raised);
+  color: var(--ink);
+  max-width: 46ch;
+}
+
+.upwork {
+  max-width: 52ch;
+  font-size: var(--step--1);
+  color: var(--ink-2);
+}
+
+@media (max-width: 55.99rem) {
+  .about {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .head {
+    grid-row: auto;
+  }
+}

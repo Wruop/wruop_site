@@ -24,3 +24,12 @@ Thumbs.db
 # Notas internas de produto e design (ficam só no seu computador)
 PRODUCT.md
 DESIGN.md
+
+# Next.js, dependências e testes
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+test-results/
+playwright-report/

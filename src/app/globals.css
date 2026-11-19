@@ -1,0 +1,186 @@
+/* Design tokens · Weider W.
+   Approved palette: #111315 ground, #F3F0E8 ivory text, #F06436 accent, #90959B secondary.
+   Secondary text is lifted to #A3A8AE for 4.5:1+ on the ground at small sizes; the approved
+   #90959B is kept for large or decorative text only. */
+:root {
+  --ground: #111315;
+  --ground-raised: #16191c;
+  --ground-sunk: #0d0f10;
+  --ink: #f3f0e8;
+  --ink-2: #a3a8ae;
+  --ink-3: #90959b;
+  --accent: #f06436;
+  --accent-ink: #ff7a4d; /* accent used as text on the ground: 5.5:1 */
+  --line: rgb(243 240 232 / 0.09);
+  --line-strong: rgb(243 240 232 / 0.18);
+  --grid: rgb(243 240 232 / 0.035);
+  --focus: #ff7a4d;
+
+  --font-display-stack: var(--font-display), "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-sans-stack: var(--font-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono-stack: var(--font-mono), ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  /* type scale (fluid, 360px → 1440px) */
+  --step--1: clamp(0.8125rem, 0.79rem + 0.1vw, 0.875rem);
+  --step-0: clamp(1rem, 0.97rem + 0.15vw, 1.0625rem);
+  --step-1: clamp(1.1875rem, 1.12rem + 0.3vw, 1.375rem);
+  --step-2: clamp(1.5rem, 1.33rem + 0.75vw, 2rem);
+  --step-3: clamp(2rem, 1.6rem + 1.8vw, 3.25rem);
+  --step-4: clamp(2.75rem, 1.9rem + 3.8vw, 5.5rem);
+
+  /* spacing rhythm: 8px base */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4.5rem;
+  --space-7: clamp(5rem, 3.5rem + 6vw, 9rem);
+
+  --gutter: clamp(1rem, 0.4rem + 2.6vw, 2.75rem);
+  --measure: 62ch;
+  --max: 84rem;
+  --header-h: 4rem;
+  --radius: 6px;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--ground);
+  color: var(--ink);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + var(--space-2));
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: var(--font-sans-stack);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure {
+  margin: 0;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  padding: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: rgb(240 100 54 / 0.35);
+  color: var(--ink);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Shared section rhythm. Every top-level section uses .section + .wrap. */
+.wrap {
+  width: 100%;
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--space-7);
+  border-top: 1px solid var(--line);
+}
+
+.kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono-stack);
+  font-size: var(--step--1);
+  letter-spacing: 0.04em;
+  color: var(--ink-2);
+}
+
+.kicker::before {
+  content: "";
+  width: 1.5rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+.display {
+  font-family: var(--font-display-stack);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
+
+.prose {
+  max-width: var(--measure);
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hover-underline:hover {
+    text-decoration-color: var(--accent);
+  }
+}

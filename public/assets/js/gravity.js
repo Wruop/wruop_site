@@ -157,7 +157,7 @@
 
   // Reads the official wordmark from the brand SVG so the particles trace the real logo.
   function loadLogo() {
-    return fetch("assets/brand/wruop-logo-white.svg")
+    return fetch(canvas.dataset.logo || "assets/brand/wruop-logo-white.svg")
       .then((r) => (r.ok ? r.text() : Promise.reject(r.status)))
       .then((txt) => {
         const doc = new DOMParser().parseFromString(txt, "image/svg+xml");
