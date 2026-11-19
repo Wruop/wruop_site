@@ -41,13 +41,16 @@
   flex-wrap: wrap;
   gap: 0.35rem 1.5rem;
   color: var(--ink-2);
+  /* Every item carries a separator dot in the gap on its left. The first item of
+     each line starts at the list's edge, so its dot falls outside and is clipped. */
+  overflow: hidden;
 }
 
 .points li {
   position: relative;
 }
 
-.points li + li::before {
+.points li::before {
   content: "";
   position: absolute;
   left: -0.8rem;

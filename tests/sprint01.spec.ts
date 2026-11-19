@@ -178,6 +178,17 @@ test.describe("accessibility and layout", () => {
     for (const path of ["/en/", "/pt-br/"]) {
       await page.emulateMedia({ reducedMotion: "reduce" });
       await page.goto(path);
+      // Lazy images load only near the viewport: scroll through first, as a visitor would.
+      await page.evaluate(async () => {
+        for (let y = 0; y < document.body.scrollHeight; y += 600) {
+          window.scrollTo(0, y);
+          await new Promise((r) => setTimeout(r, 50));
+        }
+        window.scrollTo(0, 0);
+      });
+      await expect
+        .poll(() => page.locator("#lab img").evaluate((img: HTMLImageElement) => img.complete && img.naturalWidth > 0))
+        .toBe(true);
       await page.screenshot({ path: `test-results/shots/${info.project.name}${path.replaceAll("/", "_")}full.png`, fullPage: true });
     }
   });
